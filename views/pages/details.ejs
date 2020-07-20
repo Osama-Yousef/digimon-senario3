@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <h1>details</h1>
+    <div id="allContainerdetail">
+       
+        <div class="containerdetail">
+            <h3><%=data.name%></h3>
+            <img src="<%=data.image%>" alt="">
+            <p><%=data.level%></p>
+            
+
+            <div>
+                 <button class="showing">update digimon</button>
+                <form  action="/update/<%=data.id%>?_method=put" method="POST" class="detForm">
+                <input type="text" name="name" value="<%=data.name%>">
+                <input type="text" name="image" value="<%=data.image%>">
+                <input type="text" name="level" value="<%=data.level%>">
+                <input type="submit" value="update">
+                </form>
+              </div>
+                <form action="/delete/<%=data.id%>?_method=delete" method="POST">
+                <button>Delete</button>
+                </form>
+        </div>
+        
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>

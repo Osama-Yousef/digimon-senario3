@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
+    <title>result</title>
+</head>
+<body>
+    <header>
+        <h1>result page</h1>
+    </header>
+    <main>
+        <div class="allContainer">
+            <%data.forEach(val=>{%>
+    
+            <div class="container">
+                <h3><%=val.name%></h3>
+                <img src="<%=val.image%>" alt="">
+                <p><%=val.level%></p>
+                <div>
+                    <button class="show">Select</button>
+                    <form class="form" action="/addToDb" method="POST">
+                    <input type="text" name="name" value="<%=val.name%>">
+                    <input type="text" name="image" value="<%=val.image%>">
+                    <input type="text" name="level" value="<%=val.level%>">
+                    <input type="submit" value="add to DATABASE">
+                    </form>
+                </div>
+            </div>
+            <%})%>
+        </div>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My favourate </title>
+    <link rel="stylesheet" href="../styles/style.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>my favorite digimons</h1>
+    </header>
+    <div id="allContainerfav">
+        <%data.forEach(val=>{%>
+        <div class="containerfav">
+            <h3><%=val.name%></h3>
+            <img src="<%=val.image%>" alt="">
+            <p><%=val.level%></p>
+            <a href="/details/<%=val.id%>"><button>Show details</button></a>
+        </div>
+        <%})%>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+
+</html>
